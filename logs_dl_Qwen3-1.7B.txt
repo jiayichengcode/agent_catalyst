@@ -1,0 +1,4 @@
+Still waiting to acquire lock on /mnt/bn/chobits-wx/jiayicheng/project/agent_catalyst/models/Qwen3-1.7B/.cache/huggingface/.gitignore.lock (elapsed: 0.1 seconds)
+Still waiting to acquire lock on /mnt/bn/chobits-wx/jiayicheng/project/agent_catalyst/models/Qwen3-1.7B/.cache/huggingface/.gitignore.lock (elapsed: 0.1 seconds)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+path=/mnt/bn/chobits-wx/jiayicheng/project/agent_catalyst/models/Qwen3-1.7B

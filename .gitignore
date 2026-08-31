@@ -1,0 +1,24 @@
+# ---- Large experiment artifacts (not source) ----
+# runs/   ~1.5T of training run outputs
+# models/ ~13G of downloaded model weights
+# envs/   ~4.9G of virtualenvs / conda envs
+runs/
+models/
+envs/
+
+# ---- Generated donor datasets (~137M, regenerable) ----
+data/*.jsonl
+transfer-unit/data/*.jsonl
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+venv/
+*.egg-info/
+.ipynb_checkpoints/
+
+# ---- Misc ----
+.DS_Store
+*.swp

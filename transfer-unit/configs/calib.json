@@ -1,0 +1,5 @@
+{
+  "run_name": "calib",
+  "eval_sizes": {"sql_query": 24, "pyfix": 24, "neutral_format": 6},
+  "seed": 1
+}

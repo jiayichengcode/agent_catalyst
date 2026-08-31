@@ -1,0 +1,5 @@
+{
+  "run_name": "sfteval",
+  "eval_sizes": {"sql_query": 48, "pyfix": 24, "neutral_format": 12},
+  "seed": 1
+}

@@ -1,0 +1,17 @@
+{
+ "steps": 150,
+ "group_size": 8,
+ "temperature": 1.0,
+ "adv_baseline": "group",
+ "mixture": {
+  "sql_query": 6,
+  "pyfix": 4,
+  "neutral_format": 2
+ },
+ "seed": 1,
+ "condition": "F5",
+ "c_oversample": 3,
+ "run_name": "v7_F5_s1",
+ "loss_norm_tokens": 30000,
+ "prefix_caching": false
+}

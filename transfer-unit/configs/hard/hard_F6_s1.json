@@ -1,0 +1,20 @@
+{
+ "steps": 150,
+ "group_size": 8,
+ "temperature": 1.0,
+ "adv_baseline": "task",
+ "mixture": {
+  "sql_query": 6,
+  "pyfix": 4,
+  "neutral_format": 2
+ },
+ "seed": 1,
+ "condition": "F6",
+ "run_name": "hard_F6_s1",
+ "loss_norm_tokens": 30000,
+ "eval_sizes": {
+  "sql_query": 35,
+  "pyfix": 24,
+  "neutral_format": 8
+ }
+}

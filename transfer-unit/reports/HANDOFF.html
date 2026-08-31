@@ -1,0 +1,394 @@
+<title>Catalyst Data Lab Record</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+  :root {
+    --ground: #F5F7F8;
+    --surface: #FFFFFF;
+    --surface-2: #EDF1F2;
+    --ink: #14181E;
+    --ink-2: #57626D;
+    --ink-3: #8B959F;
+    --line: #DCE3E6;
+    --line-strong: #C3CDD2;
+    --accent: #0E6E70;
+    --accent-soft: #DCEDED;
+    --dead: #A6273F;
+    --dead-soft: #F7E2E6;
+    --open: #8A6415;
+    --open-soft: #F6ECD8;
+    --display: "Spectral", Georgia, serif;
+    --body: "IBM Plex Sans", system-ui, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #0D1014;
+      --surface: #151A20;
+      --surface-2: #1C232B;
+      --ink: #E7ECF0;
+      --ink-2: #9AA5B1;
+      --ink-3: #6E7986;
+      --line: #262E37;
+      --line-strong: #38424D;
+      --accent: #52C3C5;
+      --accent-soft: #10312F;
+      --dead: #E8788C;
+      --dead-soft: #341A20;
+      --open: #D6A94B;
+      --open-soft: #302713;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #0D1014;
+    --surface: #151A20;
+    --surface-2: #1C232B;
+    --ink: #E7ECF0;
+    --ink-2: #9AA5B1;
+    --ink-3: #6E7986;
+    --line: #262E37;
+    --line-strong: #38424D;
+    --accent: #52C3C5;
+    --accent-soft: #10312F;
+    --dead: #E8788C;
+    --dead-soft: #341A20;
+    --open: #D6A94B;
+    --open-soft: #302713;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 940px; margin: 0 auto; padding: 0 24px 96px; }
+
+  /* ---------- masthead ---------- */
+  header.mast {
+    border-bottom: 2px solid var(--ink);
+    padding: 56px 0 22px;
+    margin-bottom: 40px;
+  }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+  h1 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(34px, 5.6vw, 54px);
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+  .standfirst {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: clamp(17px, 2.3vw, 21px);
+    line-height: 1.5;
+    color: var(--ink-2);
+    margin: 0 0 26px;
+    max-width: 62ch;
+  }
+  .factbar {
+    display: flex; flex-wrap: wrap; gap: 8px 28px;
+    font-family: var(--mono); font-size: 12px; color: var(--ink-3);
+  }
+  .factbar b { color: var(--ink-2); font-weight: 500; }
+
+  /* ---------- verdict panel ---------- */
+  .verdict {
+    background: var(--surface);
+    border: 1px solid var(--line-strong);
+    border-left: 4px solid var(--dead);
+    padding: 26px 28px;
+    margin: 0 0 52px;
+  }
+  .verdict h2 {
+    font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--dead); margin: 0 0 14px; font-weight: 500;
+  }
+  .verdict p { margin: 0 0 12px; max-width: 68ch; }
+  .verdict p:last-child { margin-bottom: 0; }
+  .verdict .zh { color: var(--ink-2); font-size: 15px; }
+
+  h2.sec {
+    font-family: var(--display);
+    font-size: clamp(24px, 3.4vw, 32px);
+    font-weight: 600; letter-spacing: -0.01em;
+    margin: 64px 0 6px; padding-top: 20px;
+    border-top: 1px solid var(--line);
+    text-wrap: balance;
+  }
+  h2.sec + .lede { color: var(--ink-2); margin: 0 0 26px; max-width: 66ch; }
+  h3 {
+    font-family: var(--body); font-size: 17px; font-weight: 600;
+    margin: 34px 0 8px; letter-spacing: -0.005em;
+  }
+  p { max-width: 70ch; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  code {
+    font-family: var(--mono); font-size: 0.88em;
+    background: var(--surface-2); padding: 1px 5px; border-radius: 3px;
+  }
+
+  /* ---------- hypothesis chain ---------- */
+  .chain { display: flex; flex-direction: column; gap: 18px; margin-top: 28px; }
+  .hyp {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    padding: 22px 24px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4px 18px;
+  }
+  .hyp .num {
+    font-family: var(--mono); font-size: 12px; font-weight: 500;
+    color: var(--ink-3); padding-top: 4px; grid-row: span 3;
+    letter-spacing: 0.04em;
+  }
+  .hyp .claim { font-weight: 600; font-size: 16.5px; margin: 0; }
+  .hyp .detail { color: var(--ink-2); margin: 6px 0 0; font-size: 15px; }
+  .hyp .kill {
+    margin: 12px 0 0; font-size: 15px;
+    padding-left: 14px; border-left: 2px solid var(--line-strong);
+  }
+  .hyp .kill b { font-weight: 600; }
+  .chip {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.09em;
+    text-transform: uppercase; padding: 3px 8px; border-radius: 2px;
+    white-space: nowrap; align-self: start; justify-self: start;
+    margin-bottom: 4px;
+  }
+  .chip.dead { background: var(--dead-soft); color: var(--dead); }
+  .chip.live { background: var(--accent-soft); color: var(--accent); }
+  .chip.open { background: var(--open-soft); color: var(--open); }
+
+  /* ---------- tables ---------- */
+  .tblwrap { overflow-x: auto; margin: 20px 0 8px; border: 1px solid var(--line); background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
+  caption {
+    caption-side: top; text-align: left; padding: 14px 16px 10px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--ink-3); border-bottom: 1px solid var(--line);
+  }
+  th, td { padding: 9px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+  th {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3);
+    background: var(--surface-2); white-space: nowrap;
+  }
+  td.num, th.num { text-align: right; font-family: var(--mono); font-variant-numeric: tabular-nums; }
+  tbody tr:last-child td { border-bottom: none; }
+  tr.hi td { background: var(--accent-soft); }
+  tr.lo td { background: var(--dead-soft); }
+  .tnote { font-size: 13.5px; color: var(--ink-3); margin: 8px 0 0; max-width: 70ch; }
+
+  ul, ol { max-width: 70ch; padding-left: 22px; }
+  li { margin-bottom: 7px; }
+  ol.traps li::marker { font-family: var(--mono); color: var(--ink-3); font-size: 13px; }
+
+  .next { display: grid; gap: 14px; margin-top: 24px; }
+  .next .item {
+    border-left: 3px solid var(--accent); padding: 4px 0 4px 16px;
+  }
+  .next .item b { display: block; margin-bottom: 2px; }
+  .next .item span { color: var(--ink-2); font-size: 15px; }
+
+  footer {
+    margin-top: 72px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-family: var(--mono); font-size: 12px; color: var(--ink-3);
+  }
+  footer a { color: var(--accent); }
+</style>
+
+<div class="wrap">
+
+<header class="mast">
+  <div class="eyebrow">Lab record · handoff for new collaborators</div>
+  <h1>Does catalyst data exist?</h1>
+  <p class="standfirst">Six weeks of experiments chasing one appealing idea — that a small amount of the right auxiliary data can make a target task train dramatically faster, the way a catalyst speeds a reaction without being consumed.</p>
+  <div class="factbar">
+    <span><b>157</b> training runs</span>
+    <span><b>Qwen3.5-4B</b> throughout</span>
+    <span><b>11</b> synthetic tasks</span>
+    <span><b>8–16×</b> H100</span>
+    <span>Snapshot <b>2026-08-29</b></span>
+  </div>
+</header>
+
+<section class="verdict">
+  <h2>Bottom line as of this snapshot</h2>
+  <p><b>In this setting, catalysis does not survive its budget control.</b> The best auxiliary data we found speeds up the target task by 2.4× over an under-trained baseline — but adding the <em>same amount of the target task's own data</em> gets you exactly the same curve (AUC 0.719 vs 0.717, n=8/6, p=0.90). Measured per <em>total</em> token consumed, the auxiliary conditions are no better than doing nothing.</p>
+  <p class="zh"><b>中文结论：</b>在当前设定下，"催化剂数据"没有通过预算对照。掺入辅助数据带来的加速，与直接补充等量目标任务数据完全打平；按总 token 口径甚至没有优势。这不是"辅助数据没用"，而是"它的用处等同于多训一会儿"。</p>
+  <p>That is a real answer to a well-posed question, and the negative result is only meaningful because of the controls built to get it. What remains genuinely open is stated at the end — the falsification is scoped to one target task, one model, one data regime.</p>
+</section>
+
+<h2 class="sec">The idea we were testing</h2>
+<p class="lede">Stated in the collaborator's own framing, because every later experiment is a response to it.</p>
+<p>A catalyst in chemistry does three things: it is used in <em>sub-stoichiometric</em> amounts, it is <em>not consumed</em> by the reaction, and it changes the <em>rate</em> without changing the equilibrium. The hypothesis was that some training data behaves this way — mix a little of it in alongside your target-task data, and the target task converges much faster, with the classic example being <em>math data improving coding ability</em>.</p>
+<p>Two consequences shaped the whole project. First, the dependent variable must be <b>speed</b> — tokens of the target task needed to reach a quality bar (time-to-τ) — not final quality. Second, the deliverable is not just a phenomenon but a <b>theory</b> that predicts, before training, which data will accelerate which task.</p>
+
+<h2 class="sec">What we believed, and what killed it</h2>
+<p class="lede">Five successive positions. Each was killed by a control, not by an opinion. This is the fastest way for someone new to avoid re-running dead ends.</p>
+
+<div class="chain">
+
+  <div class="hyp">
+    <div class="num">H1</div>
+    <div class="chip dead">Falsified</div>
+    <p class="claim">Cross-task acceleration is carried by specific rollouts inside RL training</p>
+    <p class="detail">The original plan: in multi-task agentic RL, filter which self-generated rollouts of task C enter the gradient (advantage-frozen filtering, F0–F6 conditions) and watch whether task B's learning speed changes.</p>
+    <p class="kill"><b>Killed by:</b> a sampling bug first (all G rollouts in a group shared one vLLM seed — 82% of groups were eight copies of one rollout, invalidating v3–v6). After the fix, all filter conditions land on top of each other. Structurally, GRPO computes advantages within a task's own group, so catalyst data has no path into B's learning signal; on-policy data is already diverse, so the pathology catalysts would fix never arises. Sequential curriculum (train C to mastery, then B) is a pure tax: B ignites ~20 steps <em>later</em> than from scratch.</p>
+  </div>
+
+  <div class="hyp">
+    <div class="num">H2</div>
+    <div class="chip dead">Falsified</div>
+    <p class="claim">In SFT, mixing in auxiliary traces raises final quality</p>
+    <p class="detail">Dose-response grid over target-token budget × auxiliary type, endpoint pass@1 as the readout. Early numbers looked strong: 30k of target data alone scored 0.583, adding 230k auxiliary traces took it to 0.896.</p>
+    <p class="kill"><b>Killed by:</b> budget-matched controls. Training the same 30k for three epochs reaches 0.778, and 90k of fresh target data reaches 0.806 — the "catalysis" was mostly under-training being fixed. Separately, endpoint scores swing ±0.2 across seeds and orderings invert, so single-seed mixing ablations (the norm in this literature) cannot support their conclusions.</p>
+  </div>
+
+  <div class="hyp">
+    <div class="num">H3</div>
+    <div class="chip dead">Falsified</div>
+    <p class="claim">The active ingredient is error-recovery trajectories</p>
+    <p class="detail">Traces that hit an error and then recover led every budget-matched comparison: same-task error-recovery data scored 0.861 (tightest band in the whole project) and cross-task error-recovery 0.854, both far above random traces at the same budget (0.764). Same-task <em>failure</em> traces are poison (0.33–0.56).</p>
+    <p class="kill"><b>Killed by:</b> the collaborator's own objection — this is the dominant pattern of the target data itself, so the model is simply learning a broader slice of the same distribution. It is a data-quality finding, not catalysis: the "catalyst" is consumed (the model's score on the auxiliary task rises alongside), and it needs stoichiometric amounts to work.</p>
+  </div>
+
+  <div class="hyp">
+    <div class="num">H4</div>
+    <div class="chip dead">Falsified</div>
+    <p class="claim">Speed-up is predictable from gradient geometry (rank supplementation)</p>
+    <p class="detail">Switching the dependent variable to time-to-τ produced a striking table — auxiliary data appeared to give 2.4–30× speed-ups while more target data gave only 1.7×. A gradient probe suggested the predictor: auxiliary data adds independent descent directions (<code>rank_gain</code>), while data whose gradients collapse to one direction does not. Predictions were preregistered before training.</p>
+    <p class="kill"><b>Killed by:</b> its own out-of-sample test. Across five far-field domains the criterion went 1-for-5 — logic puzzles were predicted fastest and came last; translation was predicted inert and landed mid-pack. Across all 11 measured data sources, no geometric quantity correlates with speed-up above |r| = 0.35.</p>
+  </div>
+
+  <div class="hyp">
+    <div class="num">H5</div>
+    <div class="chip dead">Falsified</div>
+    <p class="claim">At least the speed-up itself is real, even if unexplained</p>
+    <p class="detail">The decisive experiment: four conditions × 8 seeds, evaluation set doubled, checkpoint spacing equalized on the target-token axis, decision rule preregistered.</p>
+    <p class="kill"><b>Killed by:</b> the budget control, again, now with enough seeds to be believed. Best auxiliary condition and "just add more of your own data" are indistinguishable (p = 0.90). Two further corrections shrank the original table: expressed per total token consumed the advantage disappears, and the earlier checkpoint schedule had been sampling high-auxiliary conditions more densely on the target-token axis, biasing them toward earlier crossings.</p>
+  </div>
+
+</div>
+
+<h2 class="sec">The decisive experiment</h2>
+<p class="lede">Preregistered in <code>reports/PREREG_ROUND3.md</code> before any of these runs started. This is the table to show a skeptic.</p>
+
+<div class="tblwrap">
+<table>
+  <caption>Round 3 · B = codegen · 4 conditions × 8 seeds · AUC of the pass@1 curve</caption>
+  <thead>
+    <tr>
+      <th>Condition</th><th>What it is</th><th class="num">n</th>
+      <th class="num">AUC</th><th class="num">tt@0.7 (B tok)</th><th class="num">per total token</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="lo"><td>none</td><td>30k target tokens, 1 epoch</td><td class="num">8</td><td class="num">0.613</td><td class="num">11,871</td><td class="num">1.28×</td></tr>
+    <tr class="hi"><td><b>b90k</b></td><td><b>90k target tokens — the budget control</b></td><td class="num">6</td><td class="num">0.717</td><td class="num">9,680</td><td class="num">1.57×</td></tr>
+    <tr><td>mh15</td><td>30k target + 15k hard math</td><td class="num">7</td><td class="num">0.646</td><td class="num">7,250</td><td class="num">1.40×</td></tr>
+    <tr class="hi"><td><b>pyf60</b></td><td><b>30k target + 60k error-recovery traces</b></td><td class="num">8</td><td class="num">0.719</td><td class="num">5,681</td><td class="num">0.89×</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="tnote">Mann-Whitney on AUC: pyf60 &gt; none <b>p = 0.016</b>; pyf60 vs b90k <b>p = 0.897</b>; mh15 vs b90k p = 0.317. Reading: auxiliary data beats an under-trained baseline, and does not beat more of your own data. The <code>tt@0.7</code> column is why the earlier framing looked so good — it counts only target tokens, hiding the extra optimizer steps the auxiliary data buys.</p>
+
+<h2 class="sec">Everything that was run</h2>
+<p class="lede">157 run directories, all results in the public repo. Checkpoints (~1.2 TB) were deliberately not kept.</p>
+
+<div class="tblwrap">
+<table>
+  <caption>Experiment phases</caption>
+  <thead><tr><th>Phase</th><th>Prefix</th><th class="num">Runs</th><th>Question</th><th>Outcome</th></tr></thead>
+  <tbody>
+    <tr><td>RL trace filtering</td><td><code>v7_*</code>, <code>hard2_*</code></td><td class="num">12</td><td>Do filtered rollouts carry cross-task acceleration?</td><td>No effect; curriculum is a tax</td></tr>
+    <tr><td>SFT dose-response</td><td><code>sftd_*</code></td><td class="num">14</td><td>Does mixing help, and at what dose?</td><td>Yes at endpoint — later explained by budget</td></tr>
+    <tr><td>SFT curves + controls</td><td><code>sftc2_*</code></td><td class="num">31</td><td>Content vs budget vs polarity, per-checkpoint</td><td>Poison result survives; catalysis does not</td></tr>
+    <tr><td>Speed / math→coding</td><td><code>mc_*</code></td><td class="num">41</td><td>Time-to-τ across 9 auxiliary domains</td><td>Large apparent speed-ups, later deflated</td></tr>
+    <tr><td>Decisive high-seed</td><td><code>r3_*</code></td><td class="num">31</td><td>Does anything beat the budget control?</td><td>No (p = 0.90)</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Results that did survive every control</h3>
+<ul>
+  <li><b>Same-task failure traces are poison.</b> Mixing a target task's own failed trajectories into distillation costs roughly half its accuracy (0.33–0.56 vs 0.72 baseline) — the largest and most reproducible content effect we found. Cross-task failures are harmless. The distinction is not "did it err" but "did it recover".</li>
+  <li><b>Unrelated data at high dose is mildly harmful</b>, not inert (0.694 vs 0.715 baseline, n=3).</li>
+  <li><b>Under-training is the dominant term.</b> Most of what looked like data-mixing magic was a 30k-token budget being too small; the fix is more epochs or more data, whichever is cheaper.</li>
+  <li><b>RL and SFT differ structurally.</b> Any "catalysis" story has to explain why on-policy RL offers no site of action — group-relative advantages isolate auxiliary data from the target's learning signal.</li>
+</ul>
+
+<h2 class="sec">Traps that produced false findings</h2>
+<p class="lede">Each of these generated a publishable-looking result before it was caught. Anyone continuing this work will meet them again.</p>
+<ol class="traps">
+  <li><b>Seed collision in vLLM sampling.</b> One <code>SamplingParams</code> seed shared across a group makes G identical rollouts. It manufactured a convincing "instance-level bimodality" story and invalidated six weeks' worth of RL runs. Fix: per-request seeds.</li>
+  <li><b>Endpoint variance of ±0.2.</b> At small data budgets, single-seed endpoint comparisons reverse their own ordering across seeds. Minimum three seeds; prefer whole-curve statistics (AUC) over single crossings.</li>
+  <li><b>Loss-normalization confound.</b> Dividing loss by the batch's own gradient-token count makes the target task's effective learning rate depend on how much auxiliary data the condition keeps — exactly the manipulated variable. Fix: a shared constant denominator.</li>
+  <li><b>Winner's curse in difficulty screening.</b> Screening instances with k = 8 samples and keeping the 0/8 ones yields a "zero-signal" pool that is roughly one-third false positives; the pool self-ignites within ten steps.</li>
+  <li><b>Checkpoint-spacing bias.</b> Saving every N optimizer steps samples high-auxiliary conditions more densely on the target-token axis, biasing time-to-τ downward for precisely the conditions under test.</li>
+  <li><b>Axis choice as a confound.</b> "Faster per target token" can simply mean "more total optimizer steps taken". Always report the total-token view alongside.</li>
+</ol>
+
+<h2 class="sec">Where a new collaborator should push</h2>
+<p class="lede">The falsification is scoped. These are the directions where the original idea could still be right.</p>
+<div class="next">
+  <div class="item"><b>A target task that is capability-bound, not budget-bound</b><span>Our target sat at 54% pass@1 with a small budget, so "more data" was always available as an alternative explanation. Pick a target where the model is genuinely stuck — the auxiliary data then has something to do that extra target data cannot.</span></div>
+  <div class="item"><b>Scale, where the effect is claimed to live</b><span>The published cross-domain results (math↔code via influence functions, NeurIPS 2025) are at 7–8B with real corpora. A 4B model on synthetic tasks may simply be below the regime where shared reasoning circuits exist to be reinforced.</span></div>
+  <div class="item"><b>Mid-training rather than fine-tuning</b><span>The most credible version of the idea is "what data makes a model more RL-able later" — a rate question at a stage where representation is still plastic. None of our runs test this.</span></div>
+  <div class="item"><b>Push the poison result instead</b><span>It is the one effect that survived every control, it is large, and it contradicts common practice (rejection-sampling pipelines that keep failed traces "for diversity"). It needs a second target task and a mechanism, not more seeds.</span></div>
+  <div class="item"><b>If you keep chasing speed, fix the measurement first</b><span>Ten-plus seeds per condition, AUC as primary, total-token axis reported, checkpoint spacing equalized, and predictions preregistered. Anything less will produce another table like ours.</span></div>
+</div>
+
+<h2 class="sec">Picking up the code</h2>
+<p>Everything — code, donor datasets, all 157 runs' curves and logs, every report and preregistration — is public at <a href="https://huggingface.co/datasets/jiayicheng/transfer-unit-catalyst">huggingface.co/datasets/jiayicheng/transfer-unit-catalyst</a> (17 MB; model checkpoints deliberately excluded).</p>
+
+<div class="tblwrap">
+<table>
+  <caption>Orientation · read in this order</caption>
+  <thead><tr><th>File</th><th>Why</th></tr></thead>
+  <tbody>
+    <tr><td><code>reports/SPEED_THEORY.md</code></td><td>The speed framing, the falsified theory, the surviving measurements</td></tr>
+    <tr><td><code>reports/PREREG_ROUND3.md</code></td><td>The decisive experiment's design and decision rule, written in advance</td></tr>
+    <tr><td><code>reports/LIT_REVIEW_speed.md</code></td><td>Where this sits against gradient-geometry and data-mixing literature</td></tr>
+    <tr><td><code>reports/FINAL_REPORT.md</code></td><td>The endpoint-quality phase, including the poison and budget controls</td></tr>
+    <tr><td><code>tu/analysis/speed.py</code></td><td>time-to-τ / AUC — the dependent variable</td></tr>
+    <tr><td><code>tu/offline/sft.py</code></td><td>The mixing experiment: target data + auxiliary data, periodic checkpoints</td></tr>
+    <tr><td><code>tu/offline/eval_ckpts.py</code></td><td>Hot-swap evaluator — one engine load, ~2.5 min per checkpoint</td></tr>
+    <tr><td><code>tu/tasks/</code></td><td>11 synthetic, programmatically verified tasks across agentic, reasoning and language forms</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Environment notes that will cost you a day otherwise</h3>
+<ul>
+  <li>Stack is pinned to CUDA 12: <code>vllm 0.19.1</code>, <code>torch 2.10+cu128</code>, <code>transformers 5.13</code>, <code>fla-core</code>. Hopper GPUs, driver 535.</li>
+  <li><code>fla-core</code> probes a broken TileLang install and refuses gated-DeltaNet backward on Hopper with triton ≥ 3.4 — both worked around in <code>scripts/*.sh</code> (shim plus a monkeypatch to the pure-torch path).</li>
+  <li><code>VLLM_ALLOW_INSECURE_SERIALIZATION=1</code> is required to pass a callable to <code>collective_rpc</code> for weight sync; <code>TORCH_BLAS_PREFER_CUBLASLT=1</code> is required or every bf16 load crashes.</li>
+  <li>On a shared NFS home, the NVML symlink workaround must be host-specific — workers running different driver versions will clobber each other's fix.</li>
+  <li>Paths are absolute: <code>grep -rl chobits-wx</code> and repoint before running anywhere else.</li>
+</ul>
+
+<footer>
+  Snapshot 2026-08-29 · Qwen3.5-4B · 157 runs · repo: huggingface.co/datasets/jiayicheng/transfer-unit-catalyst<br>
+  Round 3 was at 29 of 32 runs when this record was written; the three outstanding seeds do not change any stated verdict.
+</footer>
+
+</div>

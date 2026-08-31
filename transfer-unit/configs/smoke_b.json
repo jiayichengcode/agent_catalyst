@@ -1,0 +1,20 @@
+{
+ "run_name": "smoke_e0b",
+ "steps": 2,
+ "mixture": {
+  "sql_query": 2,
+  "pyfix": 2,
+  "neutral_format": 1
+ },
+ "group_size": 4,
+ "eval_every": 3,
+ "eval_sizes": {
+  "sql_query": 8,
+  "pyfix": 8,
+  "neutral_format": 4
+ },
+ "condition": "F6",
+ "seed": 1,
+ "logprobs_k": 5,
+ "ckpt_every": 1000
+}

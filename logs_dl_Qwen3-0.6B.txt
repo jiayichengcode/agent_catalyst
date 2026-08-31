@@ -1,0 +1,9 @@
+Hint: A new version of huggingface_hub (1.28.0) is available! You are using version 1.27.0.
+To update, run: hf update
+Hint: The `hf-cli` skill is not installed. Run `hf skills add -g --claude` to teach your AI agents how to use the `hf` CLI.
+Still waiting to acquire lock on /mnt/bn/chobits-wx/jiayicheng/project/agent_catalyst/models/Qwen3-0.6B/.cache/huggingface/.gitignore.lock (elapsed: 0.1 seconds)
+Still waiting to acquire lock on /mnt/bn/chobits-wx/jiayicheng/project/agent_catalyst/models/Qwen3-0.6B/.cache/huggingface/.gitignore.lock (elapsed: 0.1 seconds)
+Still waiting to acquire lock on /mnt/bn/chobits-wx/jiayicheng/project/agent_catalyst/models/Qwen3-0.6B/.cache/huggingface/.gitignore.lock (elapsed: 0.1 seconds)
+Still waiting to acquire lock on /mnt/bn/chobits-wx/jiayicheng/project/agent_catalyst/models/Qwen3-0.6B/.cache/huggingface/.gitignore.lock (elapsed: 0.1 seconds)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+path=/mnt/bn/chobits-wx/jiayicheng/project/agent_catalyst/models/Qwen3-0.6B

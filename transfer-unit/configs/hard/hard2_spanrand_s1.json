@@ -1,0 +1,28 @@
+{
+ "steps": 150,
+ "group_size": 8,
+ "temperature": 1.0,
+ "adv_baseline": "group",
+ "mixture": {
+  "sql_query": 6,
+  "pyfix": 4,
+  "neutral_format": 2
+ },
+ "seed": 1,
+ "condition": "F6",
+ "run_name": "hard2_spanrand_s1",
+ "loss_norm_tokens": 30000,
+ "eval_sizes": {
+  "sql_query": 28,
+  "pyfix": 24,
+  "neutral_format": 8
+ },
+ "span_mask": {
+  "task": "pyfix",
+  "mode": "random_match",
+  "spans": [
+   "S_err_react"
+  ]
+ },
+ "prefix_caching": false
+}
