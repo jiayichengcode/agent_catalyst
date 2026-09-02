@@ -6,6 +6,7 @@ P=/mnt/bn/chobits-wx/jiayicheng/project/agent_catalyst
 LOG=$P/runs/r4_fanout_$COND.log
 exec > >(tee -a "$LOG") 2>&1
 echo "===== r4 fanout [$COND] $(date -Is) host=$(hostname) ====="
+echo "HAS_TT_DATA=${HAS_TT_DATA:-<unset>}"
 nvidia-smi -L 2>&1 | head -8
 pids=""
 for g in 0 1 2 3 4 5 6 7; do
