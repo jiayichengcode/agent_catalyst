@@ -1,0 +1,15 @@
+{"step": 0, "b_tok_seen": 0, "val_b_loss": 0.24468942717781603}
+{"ckpt": 4, "b_tok_seen": 8129}
+{"ckpt": 8, "b_tok_seen": 16678}
+{"ckpt": 12, "b_tok_seen": 24975}
+{"ckpt": 16, "b_tok_seen": 32923}
+{"ckpt": 20, "b_tok_seen": 41390}
+{"ckpt": 24, "b_tok_seen": 49479}
+{"ckpt": 28, "b_tok_seen": 57913}
+{"ckpt": 32, "b_tok_seen": 66706}
+{"ckpt": 36, "b_tok_seen": 75567}
+{"step": 40, "b_tok_seen": 83576, "val_b_loss": 0.32028591208991297}
+{"ckpt": 40, "b_tok_seen": 83576}
+{"ckpt": 44, "b_tok_seen": 89790}
+{"ckpt": 45, "b_tok_seen": 89790}
+{"step": 44, "b_tok_seen": 89790, "val_b_loss": 0.3475585755185915, "final": true}

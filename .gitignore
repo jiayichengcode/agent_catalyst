@@ -1,10 +1,16 @@
 # ---- Large experiment artifacts (not source) ----
-# runs/   ~1.5T of training run outputs
 # models/ ~13G of downloaded model weights
 # envs/   ~4.9G of virtualenvs / conda envs
-runs/
 models/
 envs/
+
+# runs/ is ~1.5T of checkpoints, but each run's measurement is two small
+# JSONL files. Keep those (~1.2M total) so every number in reports/ can be
+# recomputed and checked; exclude everything else under runs/.
+runs/**
+!runs/*/
+!runs/*/curve.jsonl
+!runs/*/sft_log.jsonl
 
 # ---- Generated donor datasets (~137M, regenerable) ----
 data/*.jsonl

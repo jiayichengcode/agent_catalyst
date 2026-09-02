@@ -1,0 +1,9 @@
+{"step": 0, "b_tok_seen": 0, "val_b_loss": 0.17913329094952343}
+{"ckpt": 2, "b_tok_seen": 5097}
+{"ckpt": 4, "b_tok_seen": 9011}
+{"ckpt": 6, "b_tok_seen": 12967}
+{"ckpt": 8, "b_tok_seen": 17259}
+{"ckpt": 10, "b_tok_seen": 21710}
+{"ckpt": 12, "b_tok_seen": 26140}
+{"ckpt": 14, "b_tok_seen": 29940}
+{"step": 14, "b_tok_seen": 29940, "val_b_loss": 0.22233566831434573, "final": true}

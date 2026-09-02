@@ -1,0 +1,31 @@
+{"step": 0, "b_tok_seen": 0, "val_b_loss": 0.15825801120526056}
+{"ckpt": 2, "b_tok_seen": 0}
+{"ckpt": 4, "b_tok_seen": 1321}
+{"ckpt": 6, "b_tok_seen": 3217}
+{"ckpt": 8, "b_tok_seen": 4039}
+{"ckpt": 10, "b_tok_seen": 4931}
+{"ckpt": 12, "b_tok_seen": 7526}
+{"ckpt": 14, "b_tok_seen": 8520}
+{"ckpt": 16, "b_tok_seen": 8830}
+{"ckpt": 18, "b_tok_seen": 10098}
+{"ckpt": 20, "b_tok_seen": 10881}
+{"ckpt": 22, "b_tok_seen": 12986}
+{"ckpt": 24, "b_tok_seen": 13372}
+{"ckpt": 26, "b_tok_seen": 14544}
+{"ckpt": 28, "b_tok_seen": 15596}
+{"ckpt": 30, "b_tok_seen": 17326}
+{"ckpt": 32, "b_tok_seen": 19261}
+{"ckpt": 34, "b_tok_seen": 20042}
+{"ckpt": 36, "b_tok_seen": 20282}
+{"ckpt": 38, "b_tok_seen": 20802}
+{"step": 40, "b_tok_seen": 21737, "val_b_loss": 0.21260312925799682}
+{"ckpt": 40, "b_tok_seen": 21737}
+{"ckpt": 42, "b_tok_seen": 22779}
+{"ckpt": 44, "b_tok_seen": 23796}
+{"ckpt": 46, "b_tok_seen": 24384}
+{"ckpt": 48, "b_tok_seen": 25943}
+{"ckpt": 50, "b_tok_seen": 26716}
+{"ckpt": 52, "b_tok_seen": 28209}
+{"ckpt": 54, "b_tok_seen": 29370}
+{"ckpt": 56, "b_tok_seen": 29370}
+{"step": 55, "b_tok_seen": 29370, "val_b_loss": 0.21563497178992588, "final": true}

@@ -1,0 +1,40 @@
+{"step": 0, "b_tok_seen": 0, "val_b_loss": 0.1804088570381025}
+{"ckpt": 2, "b_tok_seen": 3052}
+{"ckpt": 4, "b_tok_seen": 3345}
+{"ckpt": 6, "b_tok_seen": 6426}
+{"ckpt": 8, "b_tok_seen": 9232}
+{"ckpt": 10, "b_tok_seen": 12232}
+{"ckpt": 12, "b_tok_seen": 13686}
+{"ckpt": 14, "b_tok_seen": 16691}
+{"ckpt": 16, "b_tok_seen": 18593}
+{"ckpt": 18, "b_tok_seen": 20536}
+{"ckpt": 20, "b_tok_seen": 21443}
+{"ckpt": 22, "b_tok_seen": 22606}
+{"ckpt": 24, "b_tok_seen": 24892}
+{"ckpt": 26, "b_tok_seen": 26153}
+{"ckpt": 28, "b_tok_seen": 27515}
+{"ckpt": 30, "b_tok_seen": 29305}
+{"ckpt": 32, "b_tok_seen": 29305}
+{"ckpt": 34, "b_tok_seen": 29903}
+{"ckpt": 35, "b_tok_seen": 29903}
+{"step": 34, "b_tok_seen": 29903, "val_b_loss": 0.22006260982591933, "final": true}
+{"step": 0, "b_tok_seen": 0, "val_b_loss": 0.1804088570381025}
+{"ckpt": 2, "b_tok_seen": 3052}
+{"ckpt": 4, "b_tok_seen": 3345}
+{"ckpt": 6, "b_tok_seen": 6426}
+{"ckpt": 8, "b_tok_seen": 9232}
+{"ckpt": 10, "b_tok_seen": 12232}
+{"ckpt": 12, "b_tok_seen": 13686}
+{"ckpt": 14, "b_tok_seen": 16691}
+{"ckpt": 16, "b_tok_seen": 18593}
+{"ckpt": 18, "b_tok_seen": 20536}
+{"ckpt": 20, "b_tok_seen": 21443}
+{"ckpt": 22, "b_tok_seen": 22606}
+{"ckpt": 24, "b_tok_seen": 24892}
+{"ckpt": 26, "b_tok_seen": 26153}
+{"ckpt": 28, "b_tok_seen": 27515}
+{"ckpt": 30, "b_tok_seen": 29305}
+{"ckpt": 32, "b_tok_seen": 29305}
+{"ckpt": 34, "b_tok_seen": 29903}
+{"ckpt": 35, "b_tok_seen": 29903}
+{"step": 34, "b_tok_seen": 29903, "val_b_loss": 0.21955267833100492, "final": true}

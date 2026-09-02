@@ -1,0 +1,9 @@
+{"ckpt": "base", "sql_query": 0.6458333333333334, "pyfix": 0.5416666666666666}
+{"ckpt": "step00002.pt", "sql_query": 0.3541666666666667, "pyfix": 0.5833333333333334}
+{"ckpt": "step00004.pt", "sql_query": 0.6458333333333334, "pyfix": 0.4583333333333333}
+{"ckpt": "step00006.pt", "sql_query": 0.6875, "pyfix": 0.4166666666666667}
+{"ckpt": "step00008.pt", "sql_query": 0.8541666666666666, "pyfix": 0.5}
+{"ckpt": "step00010.pt", "sql_query": 0.8333333333333334, "pyfix": 0.5833333333333334}
+{"ckpt": "step00012.pt", "sql_query": 0.875, "pyfix": 0.625}
+{"ckpt": "step00014.pt", "sql_query": 0.8958333333333334, "pyfix": 0.625}
+{"ckpt": "step00016.pt", "sql_query": 0.6875, "pyfix": 0.5833333333333334}
